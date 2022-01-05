@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://github.com/qualifier-shikhar",
+    "ignoreTestFiles": [
+        "**/1-getting-started/*.js",
+        "**/2-advanced-examples/*.js"
+    ]
+}
