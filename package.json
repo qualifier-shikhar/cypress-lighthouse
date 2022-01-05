@@ -1,7 +1,9 @@
 {
     "scripts": {
-        "cy:run": "npx cypress run",
-        "cy:open": "npx cypress open"
+        "delete:reports": "(if exist reports (rmdir /Q /S reports)) && mkdir reports",
+        "prereport": "npm run delete:reports",
+        "cy:run": "npm run prereport && npx cypress run",
+        "cy:open": "npm run prereport && npx cypress open"
     },
     "devDependencies": {
         "cypress": "9.2.0",

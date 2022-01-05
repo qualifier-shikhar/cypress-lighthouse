@@ -18,6 +18,7 @@
 // eslint-disable-next-line no-unused-vars
 
 const { lighthouse, prepareAudit } = require("cypress-audit");
+const fs = require("fs");
 
 module.exports = (on, config) => {
   on('before:browser:launch', (browser = {}, launchOptions) => {
@@ -25,6 +26,10 @@ module.exports = (on, config) => {
   });
 
   on('task', {
-    lighthouse: lighthouse(),
+    lighthouse: lighthouse((lighthouseReport) => {
+      const dirPath = './PerfReports';
+      const name = (lighthouseReport.lhr.requestedUrl).replace(/[-[\]{}()*+!<=:?.\/\\^$|#\s,]/g, function (x) { return '' }) + " - " + (lighthouseReport.lhr.fetchTime).split('T')[0];
+      fs.writeFileSync(`${dirPath}/GLH-(${name}).json`, JSON.stringify(lighthouseReport, null, 2));
+    }),
   });
 };
