@@ -1,14 +1,14 @@
 ## To run project
-#First Run
+First Run
 
 ```
 npm i
 ```
 
-## THEN
+THEN
 
 ```
 npm run cy:open
 ```
 
-After Execution go to [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/) and then upload the json file under reports folder.
+After execution go to [Lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/) and then upload the json file under reports folder.
