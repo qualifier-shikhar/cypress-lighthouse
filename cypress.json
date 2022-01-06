@@ -1,7 +1,8 @@
 {
-    "baseUrl": "https://github.com/qualifier-shikhar",
+    "baseUrl": "http://eaapp.somee.com/",
     "ignoreTestFiles": [
         "**/1-getting-started/*.js",
         "**/2-advanced-examples/*.js"
-    ]
+    ],
+    "testFiles": "**/*.feature"
 }
